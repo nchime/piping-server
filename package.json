@@ -5,9 +5,6 @@
   "bin": {
     "piping-server": "dist/src/index.js"
   },
-  "engines": {
-    "node": "20.x"
-  },  
   "main": "dist/src/piping.js",
   "types": "dist/src/piping.d.ts",
   "files": [
