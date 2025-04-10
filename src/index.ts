@@ -42,7 +42,10 @@ const parser = yargs
 // Parse arguments
 const args = parser.parseSync(process.argv.slice(2));
 const host: string | undefined = args["host"];
-const httpPort: number = args["http-port"];
+// const httpPort: number = args["http-port"];
+const httpPort: number = process.env.PORT || 8080;
+
+
 const enableHttps: boolean = args["enable-https"];
 const httpsPort: number | undefined = args["https-port"];
 const serverKeyPath: string | undefined = args["key-path"];
@@ -56,6 +59,7 @@ logger.level = "info";
 const pipingServer = new piping.Server({ logger });
 
 logger.info(`Piping Server ${VERSION}`);
+
 
 http.createServer({
     requestTimeout: 0,
