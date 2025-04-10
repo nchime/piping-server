@@ -19,7 +19,7 @@ const parser = yargs
   })
   .option("http-port", {
     describe: "Port of HTTP server",
-    default: Number(process.env.PORT) || 8080
+    default: 8080
   })
   .option("enable-https", {
     describe: "Enable HTTPS",
